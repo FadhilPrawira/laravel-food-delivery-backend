@@ -1,0 +1,6378 @@
+{
+	"info": {
+		"_postman_id": "33e91aaf-7bcf-4a9d-94a0-1941f0d4a1e4",
+		"name": "Fadhil FIC18-FoodDeliveryOrder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16536961"
+	},
+	"item": [
+		{
+			"name": "User management",
+			"item": [
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "user register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"bahri fic18\",\n    \"email\":\"bahri@fic18.com\",\n    \"password\":\"12345678\",\n    \"phone\":\"085640998887\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/customer/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"customer",
+										"register"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "register failed, email already exists",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\":\"bahri fic18\",\n    \"email\":\"bahri@fic18.com\",\n    \"password\":\"12345678\",\n    \"phone\":\"085640998887\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/customer/register",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"customer",
+												"register"
+											]
+										}
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:31:37 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"validation.unique\",\n    \"errors\": {\n        \"email\": [\n            \"validation.unique\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "register success Fadhil",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\":\"Fadhil fic18\",\n    \"email\":\"fadhil@fic18.com\",\n    \"password\":\"12345678\",\n    \"phone\":\"0852112349877\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/customer/register",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"customer",
+												"register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:38:56 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Customer registered successfully\",\n    \"data\": {\n        \"name\": \"Fadhil fic18\",\n        \"email\": \"fadhil@fic18.com\",\n        \"phone\": \"0852112349877\",\n        \"role\": \"customer\",\n        \"updated_at\": \"2024-06-24T08:38:56.000000Z\",\n        \"created_at\": \"2024-06-24T08:38:56.000000Z\",\n        \"id\": 4\n    }\n}"
+								},
+								{
+									"name": "register success bahri",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\":\"bahri fic18\",\n    \"email\":\"bahri@fic18.com\",\n    \"password\":\"12345678\",\n    \"phone\":\"085640998887\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/customer/register",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"customer",
+												"register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:39:20 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Customer registered successfully\",\n    \"data\": {\n        \"name\": \"bahri fic18\",\n        \"email\": \"bahri@fic18.com\",\n        \"phone\": \"085640998887\",\n        \"role\": \"customer\",\n        \"updated_at\": \"2024-06-24T08:39:20.000000Z\",\n        \"created_at\": \"2024-06-24T08:39:20.000000Z\",\n        \"id\": 5\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"bahri@fic18.com\",\n    \"password\":\"12345678\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "login failed",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\":\"bahri@fic18.com\",\n    \"password\":\"wrong_password\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"login"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:32:23 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Email or password is incorrect.\"\n}"
+								},
+								{
+									"name": "login success Fadhil",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\":\"fadhil@fic18.com\",\n    \"password\":\"12345678\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:39:38 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Login success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 4,\n            \"name\": \"Fadhil fic18\",\n            \"email\": \"fadhil@fic18.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2024-06-24T08:38:56.000000Z\",\n            \"updated_at\": \"2024-06-24T08:38:56.000000Z\",\n            \"phone\": \"0852112349877\",\n            \"address\": null,\n            \"role\": \"customer\",\n            \"license_plate\": null,\n            \"restaurant_name\": null,\n            \"restaurant_address\": null,\n            \"photo\": null,\n            \"latlong\": null\n        },\n        \"token\": \"5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f\"\n    }\n}"
+								},
+								{
+									"name": "login success bahri",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\":\"bahri@fic18.com\",\n    \"password\":\"12345678\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:40:00 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Login success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 5,\n            \"name\": \"bahri fic18\",\n            \"email\": \"bahri@fic18.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2024-06-24T08:39:20.000000Z\",\n            \"updated_at\": \"2024-06-24T08:39:20.000000Z\",\n            \"phone\": \"085640998887\",\n            \"address\": null,\n            \"role\": \"customer\",\n            \"license_plate\": null,\n            \"restaurant_name\": null,\n            \"restaurant_address\": null,\n            \"photo\": null,\n            \"latlong\": null\n        },\n        \"token\": \"6|V7024X3PjiblSIuGlcrWoeSgpiZ5WI0w77E2k3Wtbfd77fbd\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "user logout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 5|6jwGIce2Bp7FD0hljovsr4464D2QJIPheweckANNfab781a3",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/logout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "logout success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 4|1NHs7TFYH0WvEK2pmlWWQeGHkMts96Ncvhlqej2t78c6ca5f",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/logout",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"logout"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:32:44 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Logout success\"\n}"
+								},
+								{
+									"name": "logout failed",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/logout",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"logout"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:32:53 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								},
+								{
+									"name": "logout success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 4|1NHs7TFYH0WvEK2pmlWWQeGHkMts96Ncvhlqej2t78c6ca5f",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/logout",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"logout"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:33:51 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Logout success\"\n}"
+								},
+								{
+									"name": "logout success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 5|6jwGIce2Bp7FD0hljovsr4464D2QJIPheweckANNfab781a3",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/logout",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"logout"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:35:44 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Logout success\"\n}"
+								},
+								{
+									"name": "logout failed",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/logout",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"logout"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:35:58 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "get detail authenticated user",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get detail failed",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/user",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:41:13 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								},
+								{
+									"name": "success get detail Fadhil",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/user",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:40:34 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 4,\n    \"name\": \"Fadhil fic18\",\n    \"email\": \"fadhil@fic18.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2024-06-24T08:38:56.000000Z\",\n    \"updated_at\": \"2024-06-24T08:38:56.000000Z\",\n    \"phone\": \"0852112349877\",\n    \"address\": null,\n    \"role\": \"customer\",\n    \"license_plate\": null,\n    \"restaurant_name\": null,\n    \"restaurant_address\": null,\n    \"photo\": null,\n    \"latlong\": null\n}"
+								},
+								{
+									"name": "success get detail bahri",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 6|V7024X3PjiblSIuGlcrWoeSgpiZ5WI0w77E2k3Wtbfd77fbd",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/user",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:41:05 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 5,\n    \"name\": \"bahri fic18\",\n    \"email\": \"bahri@fic18.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2024-06-24T08:39:20.000000Z\",\n    \"updated_at\": \"2024-06-24T08:39:20.000000Z\",\n    \"phone\": \"085640998887\",\n    \"address\": null,\n    \"role\": \"customer\",\n    \"license_plate\": null,\n    \"restaurant_name\": null,\n    \"restaurant_address\": null,\n    \"photo\": null,\n    \"latlong\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Restaurant",
+					"item": [
+						{
+							"name": "restaurant register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Rozali-Kopi Kenangan Wisma Hartono",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "kopikenanganwismahartonojogja@fic18.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "08174862986",
+											"type": "text"
+										},
+										{
+											"key": "restaurant_name",
+											"value": "Kopi Kenangan - Wisma Hartono",
+											"type": "text"
+										},
+										{
+											"key": "restaurant_address",
+											"value": "Jl. Jend. Sudirman No.59, Gondokusuman, Yogyakarta",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "postman-cloud:///1ef31f23-ba1f-4090-84c8-a8c63c31505a"
+										},
+										{
+											"key": "latlong",
+											"value": "-7.782430424928304, 110.37245747431722",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/restaurant/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"restaurant",
+										"register"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "register success Jogja",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Rozali-Kopi Kenangan Wisma Hartono",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "kopikenanganwismahartonojogja@fic18.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345678",
+													"type": "text"
+												},
+												{
+													"key": "phone",
+													"value": "08174862986",
+													"type": "text"
+												},
+												{
+													"key": "restaurant_name",
+													"value": "Kopi Kenangan - Wisma Hartono",
+													"type": "text"
+												},
+												{
+													"key": "restaurant_address",
+													"value": "Jl. Jend. Sudirman No.59, Gondokusuman, Yogyakarta",
+													"type": "text"
+												},
+												{
+													"key": "photo",
+													"type": "file",
+													"src": "postman-cloud:///1ef31f23-ba1f-4090-84c8-a8c63c31505a"
+												},
+												{
+													"key": "latlong",
+													"value": "-7.782430424928304, 110.37245747431722",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/restaurant/register",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"restaurant",
+												"register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:23:46 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Restaurant registered successfully\",\n    \"data\": {\n        \"name\": \"Rozali-Kopi Kenangan Wisma Hartono\",\n        \"email\": \"kopikenanganwismahartonojogja@fic18.com\",\n        \"phone\": \"08174862986\",\n        \"restaurant_name\": \"Kopi Kenangan - Wisma Hartono\",\n        \"restaurant_address\": \"Jl. Jend. Sudirman No.59, Gondokusuman, Yogyakarta\",\n        \"photo\": \"1719210225.jpg\",\n        \"role\": \"restaurant\",\n        \"latlong\": \"-7.782430424928304, 110.37245747431722\",\n        \"updated_at\": \"2024-06-24T06:23:46.000000Z\",\n        \"created_at\": \"2024-06-24T06:23:46.000000Z\",\n        \"id\": 1\n    }\n}"
+								},
+								{
+									"name": "register success Jakarta",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Yusuf-Kopi Kenangan Mall Taman Anggrek",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "kopikenanganmalltamananggrekjakarta@fic18.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345678",
+													"type": "text"
+												},
+												{
+													"key": "phone",
+													"value": "08811649497",
+													"type": "text"
+												},
+												{
+													"key": "restaurant_name",
+													"value": "Kopi Kenangan - Mall Taman Anggrek",
+													"type": "text"
+												},
+												{
+													"key": "restaurant_address",
+													"value": "Mall Taman Anggrek Jl. Letjen S. Parman No.28, Grogol petamburan, Jakarta Barat",
+													"type": "text"
+												},
+												{
+													"key": "photo",
+													"type": "file",
+													"src": "postman-cloud:///1ef31fd2-0fa3-4490-b612-b0d163d9946f"
+												},
+												{
+													"key": "latlong",
+													"value": "-6.1785031257594065, 106.7922986291258",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/restaurant/register",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"restaurant",
+												"register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:33:14 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Restaurant registered successfully\",\n    \"data\": {\n        \"name\": \"Yusuf-Kopi Kenangan Mall Taman Anggrek\",\n        \"email\": \"kopikenanganmalltamananggrekjakarta@fic18.com\",\n        \"phone\": \"08811649497\",\n        \"restaurant_name\": \"Kopi Kenangan - Mall Taman Anggrek\",\n        \"restaurant_address\": \"Mall Taman Anggrek Jl. Letjen S. Parman No.28, Grogol petamburan, Jakarta Barat\",\n        \"photo\": \"1719217994.jpg\",\n        \"role\": \"restaurant\",\n        \"latlong\": \"-6.1785031257594065, 106.7922986291258\",\n        \"updated_at\": \"2024-06-24T08:33:14.000000Z\",\n        \"created_at\": \"2024-06-24T08:33:14.000000Z\",\n        \"id\": 2\n    }\n}"
+								},
+								{
+									"name": "register failed, email already exist",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Rozali-Kopi Kenangan Wisma Hartono",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "kopikenanganwismahartonojogja@fic18.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345678",
+													"type": "text"
+												},
+												{
+													"key": "phone",
+													"value": "08174862986",
+													"type": "text"
+												},
+												{
+													"key": "restaurant_name",
+													"value": "Kopi Kenangan - Wisma Hartono",
+													"type": "text"
+												},
+												{
+													"key": "restaurant_address",
+													"value": "Jl. Jend. Sudirman No.59, Gondokusuman, Yogyakarta",
+													"type": "text"
+												},
+												{
+													"key": "photo",
+													"type": "file",
+													"src": "postman-cloud:///1ef31f23-ba1f-4090-84c8-a8c63c31505a"
+												},
+												{
+													"key": "latlong",
+													"value": "-7.782430424928304, 110.37245747431722",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/restaurant/register",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"restaurant",
+												"register"
+											]
+										}
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:25:30 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"validation.unique\",\n    \"errors\": {\n        \"email\": [\n            \"validation.unique\"\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "restaurant login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"kopikenanganwismahartonojogja@fic18.com\",\n    \"password\":\"12345678\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "login failed",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\":\"kopikenanganwismahartonojogja@fic18.com\",\n    \"password\":\"wrong_password\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"login"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:24:40 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Email or password is incorrect.\"\n}"
+								},
+								{
+									"name": "login success Jogja",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\":\"kopikenanganwismahartonojogja@fic18.com\",\n    \"password\":\"12345678\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:33:55 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Login success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Rozali-Kopi Kenangan Wisma Hartono\",\n            \"email\": \"kopikenanganwismahartonojogja@fic18.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2024-06-24T08:32:59.000000Z\",\n            \"updated_at\": \"2024-06-24T08:32:59.000000Z\",\n            \"phone\": \"08174862986\",\n            \"address\": null,\n            \"role\": \"restaurant\",\n            \"license_plate\": null,\n            \"restaurant_name\": \"Kopi Kenangan - Wisma Hartono\",\n            \"restaurant_address\": \"Jl. Jend. Sudirman No.59, Gondokusuman, Yogyakarta\",\n            \"photo\": \"1719217979.jpg\",\n            \"latlong\": \"-7.782430424928304, 110.37245747431722\"\n        },\n        \"token\": \"1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3\"\n    }\n}"
+								},
+								{
+									"name": "login success Jakarta",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\":\"kopikenanganmalltamananggrekjakarta@fic18.com\",\n    \"password\":\"12345678\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:34:45 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Login success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Yusuf-Kopi Kenangan Mall Taman Anggrek\",\n            \"email\": \"kopikenanganmalltamananggrekjakarta@fic18.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2024-06-24T08:33:14.000000Z\",\n            \"updated_at\": \"2024-06-24T08:33:14.000000Z\",\n            \"phone\": \"08811649497\",\n            \"address\": null,\n            \"role\": \"restaurant\",\n            \"license_plate\": null,\n            \"restaurant_name\": \"Kopi Kenangan - Mall Taman Anggrek\",\n            \"restaurant_address\": \"Mall Taman Anggrek Jl. Letjen S. Parman No.28, Grogol petamburan, Jakarta Barat\",\n            \"photo\": \"1719217994.jpg\",\n            \"latlong\": \"-6.1785031257594065, 106.7922986291258\"\n        },\n        \"token\": \"3|K7DQyloVUvBTxILfRVWbOvJKUeoX1Q4K2bDLIXA3ad9993b3\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "restaurant logout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 1|2TbwEyX5g07rW50sQpITqEagcuTDXn5shkCogNb2d2ccc71c",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/logout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "logout success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 1|2TbwEyX5g07rW50sQpITqEagcuTDXn5shkCogNb2d2ccc71c",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/logout",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"logout"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:26:47 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Logout success\"\n}"
+								},
+								{
+									"name": "logout failed",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/logout",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"logout"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:27:02 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "get detail authenticated user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 8|1paXqmJxKwtDOLoTuehzT17lLvPJunTX3V66Co0v9b26f3d0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"bambang@fic18.com\",\n    \"password\":\"12345678\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get detail failed",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\":\"bambang@fic18.com\",\n    \"password\":\"12345678\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/user",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:41:13 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								},
+								{
+									"name": "success restaurant Jogja detail",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/user",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:37:27 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 1,\n    \"name\": \"Rozali-Kopi Kenangan Wisma Hartono\",\n    \"email\": \"kopikenanganwismahartonojogja@fic18.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2024-06-24T08:32:59.000000Z\",\n    \"updated_at\": \"2024-06-24T08:32:59.000000Z\",\n    \"phone\": \"08174862986\",\n    \"address\": null,\n    \"role\": \"restaurant\",\n    \"license_plate\": null,\n    \"restaurant_name\": \"Kopi Kenangan - Wisma Hartono\",\n    \"restaurant_address\": \"Jl. Jend. Sudirman No.59, Gondokusuman, Yogyakarta\",\n    \"photo\": \"1719217979.jpg\",\n    \"latlong\": \"-7.782430424928304, 110.37245747431722\"\n}"
+								},
+								{
+									"name": "success restaurant jakarta detail",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 3|K7DQyloVUvBTxILfRVWbOvJKUeoX1Q4K2bDLIXA3ad9993b3",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/user",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:38:13 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 2,\n    \"name\": \"Yusuf-Kopi Kenangan Mall Taman Anggrek\",\n    \"email\": \"kopikenanganmalltamananggrekjakarta@fic18.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2024-06-24T08:33:14.000000Z\",\n    \"updated_at\": \"2024-06-24T08:33:14.000000Z\",\n    \"phone\": \"08811649497\",\n    \"address\": null,\n    \"role\": \"restaurant\",\n    \"license_plate\": null,\n    \"restaurant_name\": \"Kopi Kenangan - Mall Taman Anggrek\",\n    \"restaurant_address\": \"Mall Taman Anggrek Jl. Letjen S. Parman No.28, Grogol petamburan, Jakarta Barat\",\n    \"photo\": \"1719217994.jpg\",\n    \"latlong\": \"-6.1785031257594065, 106.7922986291258\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Driver",
+					"item": [
+						{
+							"name": "driver register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Bambang",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "bambangdriver@fic18.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "08563432423",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "postman-cloud:///1ef31f2f-d000-4ba0-b1ef-8f9671d9f3e6"
+										},
+										{
+											"key": "license_plate",
+											"value": "AB2342DD",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/driver/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"driver",
+										"register"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "register failed, email already exist",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Bambang",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "bambangdriver@fic18.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345678",
+													"type": "text"
+												},
+												{
+													"key": "phone",
+													"value": "08563432423",
+													"type": "text"
+												},
+												{
+													"key": "photo",
+													"type": "file",
+													"src": "postman-cloud:///1ef31f2f-d000-4ba0-b1ef-8f9671d9f3e6"
+												},
+												{
+													"key": "license_plate",
+													"value": "AB2342DD",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/driver/register",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"driver",
+												"register"
+											]
+										}
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:29:04 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"validation.unique\",\n    \"errors\": {\n        \"email\": [\n            \"validation.unique\"\n        ]\n    }\n}"
+								},
+								{
+									"name": "register success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Bambang",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "bambangdriver@fic18.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "12345678",
+													"type": "text"
+												},
+												{
+													"key": "phone",
+													"value": "08563432423",
+													"type": "text"
+												},
+												{
+													"key": "photo",
+													"type": "file",
+													"src": "postman-cloud:///1ef31f2f-d000-4ba0-b1ef-8f9671d9f3e6"
+												},
+												{
+													"key": "license_plate",
+													"value": "AB2342DD",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/driver/register",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"driver",
+												"register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:35:17 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Driver registered successfully\",\n    \"data\": {\n        \"name\": \"Bambang\",\n        \"email\": \"bambangdriver@fic18.com\",\n        \"phone\": \"08563432423\",\n        \"photo\": \"1719218117.webp\",\n        \"role\": \"driver\",\n        \"license_plate\": \"AB2342DD\",\n        \"updated_at\": \"2024-06-24T08:35:17.000000Z\",\n        \"created_at\": \"2024-06-24T08:35:17.000000Z\",\n        \"id\": 3\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "driver login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"bambangdriver@fic18.com\",\n    \"password\":\"12345678\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "login failed",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\":\"bambangdriver@fic18.com\",\n    \"password\":\"wrong_password\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"login"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:29:37 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Email or password is incorrect.\"\n}"
+								},
+								{
+									"name": "login success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\":\"bambangdriver@fic18.com\",\n    \"password\":\"12345678\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:35:46 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Login success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"Bambang\",\n            \"email\": \"bambangdriver@fic18.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2024-06-24T08:35:17.000000Z\",\n            \"updated_at\": \"2024-06-24T08:35:17.000000Z\",\n            \"phone\": \"08563432423\",\n            \"address\": null,\n            \"role\": \"driver\",\n            \"license_plate\": \"AB2342DD\",\n            \"restaurant_name\": null,\n            \"restaurant_address\": null,\n            \"photo\": \"1719218117.webp\",\n            \"latlong\": null\n        },\n        \"token\": \"4|lk5BABuXBV9PqtFjpiVYmwMhvTBaQajhFuQQRE2x414b0cb7\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "driver logout",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 2|OaImFA6Hx60O1elUqTu7QnzOxTm3WEwExHmK8wiVd83b7db9",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/logout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "logout success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 2|OaImFA6Hx60O1elUqTu7QnzOxTm3WEwExHmK8wiVd83b7db9",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/logout",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"logout"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:30:05 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Logout success\"\n}"
+								},
+								{
+									"name": "logout failed",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/logout",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"logout"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:30:17 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "get detail authenticated user",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 4|lk5BABuXBV9PqtFjpiVYmwMhvTBaQajhFuQQRE2x414b0cb7",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get detail failed",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\":\"bambang@fic18.com\",\n    \"password\":\"12345678\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/user",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:41:13 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+								},
+								{
+									"name": "driver detail success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 4|lk5BABuXBV9PqtFjpiVYmwMhvTBaQajhFuQQRE2x414b0cb7",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/user",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"user"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:36:30 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 3,\n    \"name\": \"Bambang\",\n    \"email\": \"bambangdriver@fic18.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2024-06-24T08:35:17.000000Z\",\n    \"updated_at\": \"2024-06-24T08:35:17.000000Z\",\n    \"phone\": \"08563432423\",\n    \"address\": null,\n    \"role\": \"driver\",\n    \"license_plate\": \"AB2342DD\",\n    \"restaurant_name\": null,\n    \"restaurant_address\": null,\n    \"photo\": \"1719218117.webp\",\n    \"latlong\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "update latlong",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"latlong\":\"-7.04945425840462, 110.43851010935616\"\n    \n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/update-latlong",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"update-latlong"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"latlong\":\"-7.04945425840462, 110.43851010935616\"\n    \n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/user/update-latlong",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user",
+										"update-latlong"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 08:54:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Latlong updated successfully\",\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"Fadhil fic18\",\n        \"email\": \"fadhil@fic18.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-06-24T08:38:56.000000Z\",\n        \"updated_at\": \"2024-06-24T08:54:34.000000Z\",\n        \"phone\": \"0852112349877\",\n        \"address\": null,\n        \"role\": \"customer\",\n        \"license_plate\": null,\n        \"restaurant_name\": null,\n        \"restaurant_address\": null,\n        \"photo\": null,\n        \"latlong\": \"-7.04945425840462, 110.43851010935616\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product management",
+			"item": [
+				{
+					"name": "Restaurant",
+					"item": [
+						{
+							"name": "create product",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 9|8RgYB3MB6kYUuHopcq8pAZ47902wp6oMqSX2FK7Pee9ed865",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Jus Jeruk",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Terbuat dari jeruk mandarin",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "5000",
+											"type": "text"
+										},
+										{
+											"key": "stock",
+											"value": "1000",
+											"type": "text"
+										},
+										{
+											"key": "is_available",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "is_favorite",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1ef31f54-647e-44c0-b2ad-e4bcbf4a3532"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success jes jeruk Jogja",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Jus Jeruk",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Terbuat dari jeruk mandarin",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "5000",
+													"type": "text"
+												},
+												{
+													"key": "stock",
+													"value": "1000",
+													"type": "text"
+												},
+												{
+													"key": "is_available",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "is_favorite",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "postman-cloud:///1ef31f54-647e-44c0-b2ad-e4bcbf4a3532"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/products",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:42:04 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"name\": \"Jus Jeruk\",\n        \"description\": \"Terbuat dari jeruk mandarin\",\n        \"stock\": \"1000\",\n        \"price\": \"5000\",\n        \"is_available\": \"1\",\n        \"is_favorite\": \"0\",\n        \"image\": \"1719218524.webp\",\n        \"user_id\": 1,\n        \"updated_at\": \"2024-06-24T08:42:04.000000Z\",\n        \"created_at\": \"2024-06-24T08:42:04.000000Z\",\n        \"id\": 1\n    }\n}"
+								},
+								{
+									"name": "success jes jeruk Jakarta",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 3|K7DQyloVUvBTxILfRVWbOvJKUeoX1Q4K2bDLIXA3ad9993b3",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Jus Jeruk Mall Taman Anggrek",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Jeruk Mandarin Asli",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "7000",
+													"type": "text"
+												},
+												{
+													"key": "stock",
+													"value": "1000",
+													"type": "text"
+												},
+												{
+													"key": "is_available",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "is_favorite",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "postman-cloud:///1ef31f5d-4f43-4f20-898a-02905f05d39b"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/products",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:43:26 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"name\": \"Jus Jeruk Mall Taman Anggrek\",\n        \"description\": \"Jeruk Mandarin Asli\",\n        \"stock\": \"1000\",\n        \"price\": \"7000\",\n        \"is_available\": \"1\",\n        \"is_favorite\": \"0\",\n        \"image\": \"1719218606.jpg\",\n        \"user_id\": 2,\n        \"updated_at\": \"2024-06-24T08:43:26.000000Z\",\n        \"created_at\": \"2024-06-24T08:43:26.000000Z\",\n        \"id\": 3\n    }\n}"
+								},
+								{
+									"name": "success nasi goreng merah Jakarta",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 3|K7DQyloVUvBTxILfRVWbOvJKUeoX1Q4K2bDLIXA3ad9993b3",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Nasi Goreng Merah",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Merahnya dari saos",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "12000",
+													"type": "text"
+												},
+												{
+													"key": "stock",
+													"value": "1000",
+													"type": "text"
+												},
+												{
+													"key": "is_available",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "is_favorite",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "postman-cloud:///1ef32060-9dd1-40d0-92f8-d9191051081e"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/products",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:45:10 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"name\": \"Nasi Goreng Merah\",\n        \"description\": \"Merahnya dari saos\",\n        \"stock\": \"1000\",\n        \"price\": \"12000\",\n        \"is_available\": \"1\",\n        \"is_favorite\": \"0\",\n        \"image\": \"1719218710.jpg\",\n        \"user_id\": 2,\n        \"updated_at\": \"2024-06-24T08:45:10.000000Z\",\n        \"created_at\": \"2024-06-24T08:45:10.000000Z\",\n        \"id\": 4\n    }\n}"
+								},
+								{
+									"name": "success nasi pecel Jogja",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Nasi Pecel",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "disiram dengan kacang",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "9000",
+													"type": "text"
+												},
+												{
+													"key": "stock",
+													"value": "1000",
+													"type": "text"
+												},
+												{
+													"key": "is_available",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "is_favorite",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "postman-cloud:///1ef32062-bb5e-4bf0-836e-c9e1d0a2c23f"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/products",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:45:59 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"name\": \"Nasi Pecel\",\n        \"description\": \"disiram dengan kacang\",\n        \"stock\": \"1000\",\n        \"price\": \"9000\",\n        \"is_available\": \"1\",\n        \"is_favorite\": \"0\",\n        \"image\": \"1719218759.jpg\",\n        \"user_id\": 1,\n        \"updated_at\": \"2024-06-24T08:45:59.000000Z\",\n        \"created_at\": \"2024-06-24T08:45:59.000000Z\",\n        \"id\": 5\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "update product (PUT)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 9|8RgYB3MB6kYUuHopcq8pAZ47902wp6oMqSX2FK7Pee9ed865",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Jus Jeruk Mandarin Segar",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Terbuat dari jeruk mandarin impor China",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "7000",
+											"type": "text"
+										},
+										{
+											"key": "stock",
+											"value": "500",
+											"type": "text"
+										},
+										{
+											"key": "is_available",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "is_favorite",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "postman-cloud:///1ef31f5d-4f43-4f20-898a-02905f05d39b"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/products/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "update product (PUT) with new image success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 9|8RgYB3MB6kYUuHopcq8pAZ47902wp6oMqSX2FK7Pee9ed865",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Jus Jeruk Mandarin Segar",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Terbuat dari jeruk mandarin impor China",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "7000",
+													"type": "text"
+												},
+												{
+													"key": "stock",
+													"value": "500",
+													"type": "text"
+												},
+												{
+													"key": "is_available",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "is_favorite",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "postman-cloud:///1ef31f5d-4f43-4f20-898a-02905f05d39b"
+												},
+												{
+													"key": "_method",
+													"value": "PUT",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/products/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"products",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:47:40 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Jus Jeruk Mandarin Segar\",\n        \"description\": \"Terbuat dari jeruk mandarin impor China\",\n        \"stock\": \"500\",\n        \"price\": \"7000\",\n        \"is_available\": \"1\",\n        \"is_favorite\": \"0\",\n        \"image\": \"1719211660.jpg\",\n        \"user_id\": 1,\n        \"created_at\": \"2024-06-24T06:45:27.000000Z\",\n        \"updated_at\": \"2024-06-24T06:47:40.000000Z\"\n    }\n}"
+								},
+								{
+									"name": "update product (PUT) with old image success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 9|8RgYB3MB6kYUuHopcq8pAZ47902wp6oMqSX2FK7Pee9ed865",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Jus Jeruk Mandarin Segar Gambar Lama",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Terbuat dari jeruk mandarin impor China",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "7000",
+													"type": "text"
+												},
+												{
+													"key": "stock",
+													"value": "500",
+													"type": "text"
+												},
+												{
+													"key": "is_available",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "is_favorite",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "_method",
+													"value": "PUT",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/products/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"products",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:48:20 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Jus Jeruk Mandarin Segar Gambar Lama\",\n        \"description\": \"Terbuat dari jeruk mandarin impor China\",\n        \"stock\": \"500\",\n        \"price\": \"7000\",\n        \"is_available\": \"1\",\n        \"is_favorite\": \"0\",\n        \"image\": \"1719211660.jpg\",\n        \"user_id\": 1,\n        \"created_at\": \"2024-06-24T06:45:27.000000Z\",\n        \"updated_at\": \"2024-06-24T06:48:20.000000Z\"\n    }\n}"
+								},
+								{
+									"name": "update product (PUT) failed, product not found",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 9|8RgYB3MB6kYUuHopcq8pAZ47902wp6oMqSX2FK7Pee9ed865",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Jus Jeruk Mandarin Segar",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "Terbuat dari jeruk mandarin impor China",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "7000",
+													"type": "text"
+												},
+												{
+													"key": "stock",
+													"value": "500",
+													"type": "text"
+												},
+												{
+													"key": "is_available",
+													"value": "1",
+													"type": "text"
+												},
+												{
+													"key": "is_favorite",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "_method",
+													"value": "PUT",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": "postman-cloud:///1ef31f5d-4f43-4f20-898a-02905f05d39b"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/products/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"products",
+												"2"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:50:28 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Product not found\"\n}"
+								}
+							]
+						},
+						{
+							"name": "delete product",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 9|8RgYB3MB6kYUuHopcq8pAZ47902wp6oMqSX2FK7Pee9ed865",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/products/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "delete product success",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 9|8RgYB3MB6kYUuHopcq8pAZ47902wp6oMqSX2FK7Pee9ed865",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/products/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"products",
+												"2"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:49:51 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Product deleted successfully\"\n}"
+								},
+								{
+									"name": "delete product failed, product not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 9|8RgYB3MB6kYUuHopcq8pAZ47902wp6oMqSX2FK7Pee9ed865",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/products/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"products",
+												"2"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 06:50:07 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Product not found\"\n}"
+								}
+							]
+						},
+						{
+							"name": "show product detail from authenticated restaurant",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 3|K7DQyloVUvBTxILfRVWbOvJKUeoX1Q4K2bDLIXA3ad9993b3",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/products/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"3"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "failed product not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 3|K7DQyloVUvBTxILfRVWbOvJKUeoX1Q4K2bDLIXA3ad9993b3",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/products/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"products",
+												"1"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:46:55 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Product not found\"\n}"
+								},
+								{
+									"name": "success product found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 3|K7DQyloVUvBTxILfRVWbOvJKUeoX1Q4K2bDLIXA3ad9993b3",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/products/3",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"products",
+												"3"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:47:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Product found\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"Jus Jeruk Mall Taman Anggrek\",\n        \"description\": \"Jeruk Mandarin Asli\",\n        \"stock\": 1000,\n        \"price\": 7000,\n        \"is_available\": 1,\n        \"is_favorite\": 0,\n        \"image\": \"1719218606.jpg\",\n        \"user_id\": 2,\n        \"created_at\": \"2024-06-24T08:43:26.000000Z\",\n        \"updated_at\": \"2024-06-24T08:43:26.000000Z\",\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"Yusuf-Kopi Kenangan Mall Taman Anggrek\",\n            \"email\": \"kopikenanganmalltamananggrekjakarta@fic18.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2024-06-24T08:33:14.000000Z\",\n            \"updated_at\": \"2024-06-24T08:33:14.000000Z\",\n            \"phone\": \"08811649497\",\n            \"address\": null,\n            \"role\": \"restaurant\",\n            \"license_plate\": null,\n            \"restaurant_name\": \"Kopi Kenangan - Mall Taman Anggrek\",\n            \"restaurant_address\": \"Mall Taman Anggrek Jl. Letjen S. Parman No.28, Grogol petamburan, Jakarta Barat\",\n            \"photo\": \"1719217994.jpg\",\n            \"latlong\": \"-6.1785031257594065, 106.7922986291258\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "get all product from authenticated restaurant",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success Jakarta",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 3|K7DQyloVUvBTxILfRVWbOvJKUeoX1Q4K2bDLIXA3ad9993b3",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/products",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:47:52 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"All products found\",\n    \"data\": [\n        {\n            \"id\": 3,\n            \"name\": \"Jus Jeruk Mall Taman Anggrek\",\n            \"description\": \"Jeruk Mandarin Asli\",\n            \"stock\": 1000,\n            \"price\": 7000,\n            \"is_available\": 1,\n            \"is_favorite\": 0,\n            \"image\": \"1719218606.jpg\",\n            \"user_id\": 2,\n            \"created_at\": \"2024-06-24T08:43:26.000000Z\",\n            \"updated_at\": \"2024-06-24T08:43:26.000000Z\",\n            \"user\": {\n                \"id\": 2,\n                \"name\": \"Yusuf-Kopi Kenangan Mall Taman Anggrek\",\n                \"email\": \"kopikenanganmalltamananggrekjakarta@fic18.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2024-06-24T08:33:14.000000Z\",\n                \"updated_at\": \"2024-06-24T08:33:14.000000Z\",\n                \"phone\": \"08811649497\",\n                \"address\": null,\n                \"role\": \"restaurant\",\n                \"license_plate\": null,\n                \"restaurant_name\": \"Kopi Kenangan - Mall Taman Anggrek\",\n                \"restaurant_address\": \"Mall Taman Anggrek Jl. Letjen S. Parman No.28, Grogol petamburan, Jakarta Barat\",\n                \"photo\": \"1719217994.jpg\",\n                \"latlong\": \"-6.1785031257594065, 106.7922986291258\"\n            }\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Nasi Goreng Merah\",\n            \"description\": \"Merahnya dari saos\",\n            \"stock\": 1000,\n            \"price\": 12000,\n            \"is_available\": 1,\n            \"is_favorite\": 0,\n            \"image\": \"1719218710.jpg\",\n            \"user_id\": 2,\n            \"created_at\": \"2024-06-24T08:45:10.000000Z\",\n            \"updated_at\": \"2024-06-24T08:45:10.000000Z\",\n            \"user\": {\n                \"id\": 2,\n                \"name\": \"Yusuf-Kopi Kenangan Mall Taman Anggrek\",\n                \"email\": \"kopikenanganmalltamananggrekjakarta@fic18.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2024-06-24T08:33:14.000000Z\",\n                \"updated_at\": \"2024-06-24T08:33:14.000000Z\",\n                \"phone\": \"08811649497\",\n                \"address\": null,\n                \"role\": \"restaurant\",\n                \"license_plate\": null,\n                \"restaurant_name\": \"Kopi Kenangan - Mall Taman Anggrek\",\n                \"restaurant_address\": \"Mall Taman Anggrek Jl. Letjen S. Parman No.28, Grogol petamburan, Jakarta Barat\",\n                \"photo\": \"1719217994.jpg\",\n                \"latlong\": \"-6.1785031257594065, 106.7922986291258\"\n            }\n        }\n    ]\n}"
+								},
+								{
+									"name": "success Jogja",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/products",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:48:15 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"All products found\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Jus Jeruk\",\n            \"description\": \"Terbuat dari jeruk mandarin\",\n            \"stock\": 1000,\n            \"price\": 5000,\n            \"is_available\": 1,\n            \"is_favorite\": 0,\n            \"image\": \"1719218524.webp\",\n            \"user_id\": 1,\n            \"created_at\": \"2024-06-24T08:42:04.000000Z\",\n            \"updated_at\": \"2024-06-24T08:42:04.000000Z\",\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"Rozali-Kopi Kenangan Wisma Hartono\",\n                \"email\": \"kopikenanganwismahartonojogja@fic18.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2024-06-24T08:32:59.000000Z\",\n                \"updated_at\": \"2024-06-24T08:32:59.000000Z\",\n                \"phone\": \"08174862986\",\n                \"address\": null,\n                \"role\": \"restaurant\",\n                \"license_plate\": null,\n                \"restaurant_name\": \"Kopi Kenangan - Wisma Hartono\",\n                \"restaurant_address\": \"Jl. Jend. Sudirman No.59, Gondokusuman, Yogyakarta\",\n                \"photo\": \"1719217979.jpg\",\n                \"latlong\": \"-7.782430424928304, 110.37245747431722\"\n            }\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Nasi Pecel\",\n            \"description\": \"disiram dengan kacang\",\n            \"stock\": 1000,\n            \"price\": 9000,\n            \"is_available\": 1,\n            \"is_favorite\": 0,\n            \"image\": \"1719218759.jpg\",\n            \"user_id\": 1,\n            \"created_at\": \"2024-06-24T08:45:59.000000Z\",\n            \"updated_at\": \"2024-06-24T08:45:59.000000Z\",\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"Rozali-Kopi Kenangan Wisma Hartono\",\n                \"email\": \"kopikenanganwismahartonojogja@fic18.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2024-06-24T08:32:59.000000Z\",\n                \"updated_at\": \"2024-06-24T08:32:59.000000Z\",\n                \"phone\": \"08174862986\",\n                \"address\": null,\n                \"role\": \"restaurant\",\n                \"license_plate\": null,\n                \"restaurant_name\": \"Kopi Kenangan - Wisma Hartono\",\n                \"restaurant_address\": \"Jl. Jend. Sudirman No.59, Gondokusuman, Yogyakarta\",\n                \"photo\": \"1719217979.jpg\",\n                \"latlong\": \"-7.782430424928304, 110.37245747431722\"\n            }\n        }\n    ]\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order management",
+			"item": [
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "get all restaurant",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/restaurants",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"restaurants"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "restaurant not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 10|9a954cmu13yhe5j9wEL2gUY4Xq6oUP4eied7hPvM007b946f",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/restaurants",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"restaurants"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 07:42:56 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No restaurant found\"\n}"
+								},
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/restaurants",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"restaurants"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:49:26 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Get all restaurants\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Rozali-Kopi Kenangan Wisma Hartono\",\n            \"email\": \"kopikenanganwismahartonojogja@fic18.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2024-06-24T08:32:59.000000Z\",\n            \"updated_at\": \"2024-06-24T08:32:59.000000Z\",\n            \"phone\": \"08174862986\",\n            \"address\": null,\n            \"role\": \"restaurant\",\n            \"license_plate\": null,\n            \"restaurant_name\": \"Kopi Kenangan - Wisma Hartono\",\n            \"restaurant_address\": \"Jl. Jend. Sudirman No.59, Gondokusuman, Yogyakarta\",\n            \"photo\": \"1719217979.jpg\",\n            \"latlong\": \"-7.782430424928304, 110.37245747431722\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Yusuf-Kopi Kenangan Mall Taman Anggrek\",\n            \"email\": \"kopikenanganmalltamananggrekjakarta@fic18.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2024-06-24T08:33:14.000000Z\",\n            \"updated_at\": \"2024-06-24T08:33:14.000000Z\",\n            \"phone\": \"08811649497\",\n            \"address\": null,\n            \"role\": \"restaurant\",\n            \"license_plate\": null,\n            \"restaurant_name\": \"Kopi Kenangan - Mall Taman Anggrek\",\n            \"restaurant_address\": \"Mall Taman Anggrek Jl. Letjen S. Parman No.28, Grogol petamburan, Jakarta Barat\",\n            \"photo\": \"1719217994.jpg\",\n            \"latlong\": \"-6.1785031257594065, 106.7922986291258\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "create order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"restaurant_id\":1,\n    \"shipping_cost\":27000,\n    \"order_items\":[\n        {\n            \"product_id\": 1,\n            \"quantity\":2\n        },\n        {\n            \"product_id\": 5,\n            \"quantity\":2\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/order",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"order"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success Jogja",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"restaurant_id\":1,\n    \"shipping_cost\":27000,\n    \"order_items\":[\n        {\n            \"product_id\": 1,\n            \"quantity\":2\n        },\n        {\n            \"product_id\": 5,\n            \"quantity\":2\n        }\n    ]\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/order",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 08:54:53 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Order has been created\",\n    \"data\": {\n        \"restaurant_id\": 1,\n        \"shipping_cost\": 27000,\n        \"user_id\": 4,\n        \"shipping_address\": null,\n        \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n        \"status\": \"pending\",\n        \"total_price\": 28000,\n        \"total_bill\": 55000,\n        \"updated_at\": \"2024-06-24T08:54:53.000000Z\",\n        \"created_at\": \"2024-06-24T08:54:53.000000Z\",\n        \"id\": 1\n    }\n}"
+								},
+								{
+									"name": "success Jakarta",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"restaurant_id\":2,\n    \"shipping_cost\":27000,\n    \"order_items\":[\n        {\n            \"product_id\": 3,\n            \"quantity\":2\n        },\n        {\n            \"product_id\": 4,\n            \"quantity\":2\n        }\n    ]\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/order",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 09:01:04 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Order has been created\",\n    \"data\": {\n        \"restaurant_id\": 2,\n        \"shipping_cost\": 27000,\n        \"user_id\": 4,\n        \"shipping_address\": null,\n        \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n        \"status\": \"pending\",\n        \"total_price\": 38000,\n        \"total_bill\": 65000,\n        \"updated_at\": \"2024-06-24T09:01:04.000000Z\",\n        \"created_at\": \"2024-06-24T09:01:04.000000Z\",\n        \"id\": 3\n    }\n}"
+								},
+								{
+									"name": "failed user_id in product is not same as restaurant_id",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"restaurant_id\":2,\n    \"shipping_cost\":27000,\n    \"order_items\":[\n        {\n            \"product_id\": 1,\n            \"quantity\":2\n        },\n        {\n            \"product_id\": 4,\n            \"quantity\":2\n        }\n    ]\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/order",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 09:00:06 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Some product not found in this restaurant\"\n}"
+								}
+							]
+						},
+						{
+							"name": "get order by user",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/order/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"order",
+										"user"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/order/user",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order",
+												"user"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 09:02:13 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Get all order history\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 4,\n            \"restaurant_id\": 1,\n            \"driver_id\": null,\n            \"total_price\": 28000,\n            \"shipping_cost\": 27000,\n            \"total_bill\": 55000,\n            \"payment_method\": null,\n            \"status\": \"pending\",\n            \"shipping_address\": null,\n            \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n            \"created_at\": \"2024-06-24T08:54:53.000000Z\",\n            \"updated_at\": \"2024-06-24T08:54:53.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 4,\n            \"restaurant_id\": 2,\n            \"driver_id\": null,\n            \"total_price\": 38000,\n            \"shipping_cost\": 27000,\n            \"total_bill\": 65000,\n            \"payment_method\": null,\n            \"status\": \"pending\",\n            \"shipping_address\": null,\n            \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n            \"created_at\": \"2024-06-24T08:56:46.000000Z\",\n            \"updated_at\": \"2024-06-24T08:56:46.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"user_id\": 4,\n            \"restaurant_id\": 2,\n            \"driver_id\": null,\n            \"total_price\": 38000,\n            \"shipping_cost\": 27000,\n            \"total_bill\": 65000,\n            \"payment_method\": null,\n            \"status\": \"pending\",\n            \"shipping_address\": null,\n            \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n            \"created_at\": \"2024-06-24T09:01:04.000000Z\",\n            \"updated_at\": \"2024-06-24T09:01:04.000000Z\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "failed no order found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 6|V7024X3PjiblSIuGlcrWoeSgpiZ5WI0w77E2k3Wtbfd77fbd",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/order/user",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order",
+												"user"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 09:02:41 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No order found\",\n    \"data\": []\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Restaurant",
+					"item": [
+						{
+							"name": "get order by restaurant",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 6|V7024X3PjiblSIuGlcrWoeSgpiZ5WI0w77E2k3Wtbfd77fbd",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/order/restaurant?status=pending",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"order",
+										"restaurant"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "pending"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "failed, role not restaurant",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 6|V7024X3PjiblSIuGlcrWoeSgpiZ5WI0w77E2k3Wtbfd77fbd",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/order/restaurant?status=pending",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order",
+												"restaurant"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "pending"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 09:04:38 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"You are not authorized to get order status. Must be restaurant\"\n}"
+								},
+								{
+									"name": "success, resto Jogja, status order pending",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/order/restaurant?status=pending",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order",
+												"restaurant"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "pending"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 09:05:01 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Get all order by status\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 4,\n            \"restaurant_id\": 1,\n            \"driver_id\": null,\n            \"total_price\": 28000,\n            \"shipping_cost\": 27000,\n            \"total_bill\": 55000,\n            \"payment_method\": null,\n            \"status\": \"pending\",\n            \"shipping_address\": null,\n            \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n            \"created_at\": \"2024-06-24T08:54:53.000000Z\",\n            \"updated_at\": \"2024-06-24T08:54:53.000000Z\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "success, resto Jogja, status order processing",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/order/restaurant?status=processing",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order",
+												"restaurant"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "processing"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 09:06:28 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Get all order by status\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 4,\n            \"restaurant_id\": 1,\n            \"driver_id\": null,\n            \"total_price\": 28000,\n            \"shipping_cost\": 27000,\n            \"total_bill\": 55000,\n            \"payment_method\": null,\n            \"status\": \"processing\",\n            \"shipping_address\": null,\n            \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n            \"created_at\": \"2024-06-24T08:54:53.000000Z\",\n            \"updated_at\": \"2024-06-24T08:54:53.000000Z\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "failed not found, resto Jogja, status pending",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/order/restaurant?status=pending",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order",
+												"restaurant"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "pending"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 09:07:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No order found\",\n    \"data\": []\n}"
+								},
+								{
+									"name": "failed not found, resto Jogja, status processing",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/order/restaurant?status=processing",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order",
+												"restaurant"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "processing"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 09:05:36 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No order found\",\n    \"data\": []\n}"
+								}
+							]
+						},
+						{
+							"name": "update order by restaurant",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\":\"prepared\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/order/restaurant/update-status/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"order",
+										"restaurant",
+										"update-status",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "failed order not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"status\":\"prepared\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/order/restaurant/update-status/9",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order",
+												"restaurant",
+												"update-status",
+												"9"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 09:08:17 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"Order not found\"\n}"
+								},
+								{
+									"name": "failed, restaurant_id in order not same as authenticated user",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"status\":\"prepared\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/order/restaurant/update-status/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order",
+												"restaurant",
+												"update-status",
+												"2"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 09:09:26 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"error\",\n    \"message\": \"You are not authorized to update this order status\"\n}"
+								},
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"status\":\"prepared\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/order/restaurant/update-status/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order",
+												"restaurant",
+												"update-status",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 09:09:52 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Order status updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 4,\n        \"restaurant_id\": 1,\n        \"driver_id\": null,\n        \"total_price\": 28000,\n        \"shipping_cost\": 27000,\n        \"total_bill\": 55000,\n        \"payment_method\": null,\n        \"status\": \"prepared\",\n        \"shipping_address\": null,\n        \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n        \"created_at\": \"2024-06-24T08:54:53.000000Z\",\n        \"updated_at\": \"2024-06-24T09:09:52.000000Z\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Driver",
+					"item": [
+						{
+							"name": "get order by driver",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 4|lk5BABuXBV9PqtFjpiVYmwMhvTBaQajhFuQQRE2x414b0cb7",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/order/driver?status=ready_for_delivery",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"order",
+										"driver"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "ready_for_delivery"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success??",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 4|lk5BABuXBV9PqtFjpiVYmwMhvTBaQajhFuQQRE2x414b0cb7",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/api/order/driver?status=ready_for_delivery",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order",
+												"driver"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "ready_for_delivery"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 14:25:33 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Get all order by status\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 4,\n            \"restaurant_id\": 1,\n            \"driver_id\": 3,\n            \"total_price\": 28000,\n            \"shipping_cost\": 27000,\n            \"total_bill\": 55000,\n            \"payment_method\": null,\n            \"status\": \"ready_for_delivery\",\n            \"shipping_address\": null,\n            \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n            \"created_at\": \"2024-06-24T08:54:53.000000Z\",\n            \"updated_at\": \"2024-06-24T09:11:47.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 4,\n            \"restaurant_id\": 2,\n            \"driver_id\": 3,\n            \"total_price\": 38000,\n            \"shipping_cost\": 27000,\n            \"total_bill\": 65000,\n            \"payment_method\": null,\n            \"status\": \"ready_for_delivery\",\n            \"shipping_address\": null,\n            \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n            \"created_at\": \"2024-06-24T08:56:46.000000Z\",\n            \"updated_at\": \"2024-06-24T09:08:40.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"user_id\": 4,\n            \"restaurant_id\": 2,\n            \"driver_id\": 3,\n            \"total_price\": 38000,\n            \"shipping_cost\": 27000,\n            \"total_bill\": 65000,\n            \"payment_method\": null,\n            \"status\": \"ready_for_delivery\",\n            \"shipping_address\": null,\n            \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n            \"created_at\": \"2024-06-24T09:01:04.000000Z\",\n            \"updated_at\": \"2024-06-24T09:01:04.000000Z\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "update order by driver",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 4|lk5BABuXBV9PqtFjpiVYmwMhvTBaQajhFuQQRE2x414b0cb7",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\":\"on_the_way\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/order/driver/update-status/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"order",
+										"driver",
+										"update-status",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 4|lk5BABuXBV9PqtFjpiVYmwMhvTBaQajhFuQQRE2x414b0cb7",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"status\":\"on_the_way\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/order/driver/update-status/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order",
+												"driver",
+												"update-status",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 14:26:19 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Order status updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 4,\n        \"restaurant_id\": 1,\n        \"driver_id\": 3,\n        \"total_price\": 28000,\n        \"shipping_cost\": 27000,\n        \"total_bill\": 55000,\n        \"payment_method\": null,\n        \"status\": \"on_the_way\",\n        \"shipping_address\": null,\n        \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n        \"created_at\": \"2024-06-24T08:54:53.000000Z\",\n        \"updated_at\": \"2024-06-24T14:26:19.000000Z\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "update order by user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\":\"processing\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/order/user/update-status/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"order",
+								"user",
+								"update-status",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\":\"processing\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/order/user/update-status/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"order",
+										"user",
+										"update-status",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Jun 2024 14:27:38 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Order status has been updated\",\n    \"data\": {\n        \"id\": 3,\n        \"user_id\": 4,\n        \"restaurant_id\": 2,\n        \"driver_id\": 3,\n        \"total_price\": 38000,\n        \"shipping_cost\": 27000,\n        \"total_bill\": 65000,\n        \"payment_method\": null,\n        \"status\": \"processing\",\n        \"shipping_address\": null,\n        \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n        \"created_at\": \"2024-06-24T09:01:04.000000Z\",\n        \"updated_at\": \"2024-06-24T14:27:38.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
