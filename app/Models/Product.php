@@ -20,6 +20,21 @@ class Product extends Model
         'user_id',
     ];
 
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'stock' => 'integer',
+            'price' => 'integer',
+            'is_available' => 'integer',
+            'is_favorite' => 'integer',
+        ];
+    }
+
     public function user()
     {
         // One to many relationship (inverse)
