@@ -39,7 +39,7 @@ class OrderController extends Controller
                     return response()->json([
                         'status' => 'error',
                         'message' => 'Some product not found in this restaurant',
-                    ], 404);
+                    ])->setStatusCode(404);
                 }
             }
 
@@ -88,12 +88,12 @@ class OrderController extends Controller
                 'status' => 'success',
                 'message' => 'Order has been created',
                 'data' => $order
-            ]);
+            ])->setStatusCode(201);
         } else {
             return response()->json([
                 'status' => 'error',
                 'message' => 'You are not authorized to create order. Must be user'
-            ], 403);
+            ])->setStatusCode(403);
         }
     }
 
@@ -114,7 +114,7 @@ class OrderController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'Order not found',
-            ], 404);
+            ])->setStatusCode(404);
         }
 
         // Update the status
@@ -125,7 +125,7 @@ class OrderController extends Controller
             'status' => 'success',
             'message' => 'Order status has been updated',
             'data' => $order
-        ]);
+        ])->setStatusCode(200);
     }
 
     // Get all orders for customer
@@ -143,19 +143,19 @@ class OrderController extends Controller
                     'status' => 'error',
                     'message' => 'No order found',
                     'data' => $orders
-                ], 404);
+                ])->setStatusCode(404);
             }
 
             return response()->json([
                 'status' => 'success',
                 'message' => 'Get all order history',
                 'data' => $orders
-            ]);
+            ])->setStatusCode(200);
         } else {
             return response()->json([
                 'status' => 'error',
                 'message' => 'You are not authorized to get order history. Must be user'
-            ], 403);
+            ])->setStatusCode(403);
         }
     }
 
@@ -171,7 +171,7 @@ class OrderController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'Order not found',
-            ], 404);
+            ])->setStatusCode(404);
         }
 
         // Update the status
@@ -182,7 +182,7 @@ class OrderController extends Controller
             'status' => 'success',
             'message' => 'Order has been cancelled',
             'data' => $order
-        ]);
+        ])->setStatusCode(200);
     }
 
     // Get order by status for restaurant
@@ -206,18 +206,18 @@ class OrderController extends Controller
                     'status' => 'error',
                     'message' => 'No order found',
                     'data' => $orders
-                ], 404);
+                ])->setStatusCode(404);
             }
             return response()->json([
                 'status' => 'success',
                 'message' => 'Get all order by status',
                 'data' => $orders
-            ]);
+            ])->setStatusCode(200);
         } else {
             return response()->json([
                 'status' => 'error',
                 'message' => 'You are not authorized to get order status. Must be restaurant'
-            ], 403);
+            ])->setStatusCode(403);
         }
     }
 
@@ -242,7 +242,7 @@ class OrderController extends Controller
                 return response()->json([
                     'status' => 'error',
                     'message' => 'You are not authorized to update this order status',
-                ], 403);
+                ])->setStatusCode(403);
             }
 
             // If order not found then return error
@@ -250,7 +250,7 @@ class OrderController extends Controller
                 return response()->json([
                     'status' => 'error',
                     'message' => 'Order not found',
-                ], 404);
+                ])->setStatusCode(404);
             }
 
             // Update the status
@@ -261,12 +261,12 @@ class OrderController extends Controller
                 'status' => 'success',
                 'message' => 'Order status updated successfully',
                 'data' => $order
-            ]);
+            ])->setStatusCode(200);
         } else {
             return response()->json([
                 'status' => 'error',
                 'message' => 'You are not authorized to update order status. Must be restaurant'
-            ], 403);
+            ])->setStatusCode(403);
         }
     }
 
@@ -292,19 +292,19 @@ class OrderController extends Controller
                     'status' => 'error',
                     'message' => 'No order found',
                     'data' => $orders
-                ], 404);
+                ])->setStatusCode(404);
             }
 
             return response()->json([
                 'status' => 'success',
                 'message' => 'Get all order by status',
                 'data' => $orders
-            ]);
+            ])->setStatusCode(200);
         } else {
             return response()->json([
                 'status' => 'error',
                 'message' => 'You are not authorized to get order status. Must be driver'
-            ], 403);
+            ])->setStatusCode(403);
         }
     }
 
@@ -323,7 +323,7 @@ class OrderController extends Controller
             'status' => 'success',
             'message' => 'Get all order by status ready for delivery',
             'data' => $orders
-        ]);
+        ])->setStatusCode(200);
     }
 
     // Update order status for driver
@@ -348,7 +348,7 @@ class OrderController extends Controller
                 return response()->json([
                     'status' => 'error',
                     'message' => 'Order not found',
-                ], 404);
+                ])->setStatusCode(404);
             }
 
             // Update the status
@@ -359,12 +359,12 @@ class OrderController extends Controller
                 'status' => 'success',
                 'message' => 'Order status updated successfully',
                 'data' => $order
-            ]);
+            ])->setStatusCode(200);
         } else {
             return response()->json([
                 'status' => 'error',
                 'message' => 'You are not authorized to update order status. Must be driver'
-            ], 403);
+            ])->setStatusCode(403);
         }
     }
 }

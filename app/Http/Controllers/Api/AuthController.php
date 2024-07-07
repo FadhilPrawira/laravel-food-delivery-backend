@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    // User register
+    // Customer register
     public function customerRegister(Request $request)
     {
         // Validate the request
@@ -20,9 +20,12 @@ class AuthController extends Controller
             'phone' => 'required|string',
         ]);
 
+        // Get all request data
         $data = $request->all();
+
         // Hash the password
         $data['password'] = Hash::make($data['password']);
+
         // Set the role to customer
         $data['role'] = 'customer';
 
@@ -33,7 +36,7 @@ class AuthController extends Controller
             'status' => 'success',
             'message' => 'Customer registered successfully',
             'data' => $user,
-        ]);
+        ])->setStatusCode(201);
     }
 
     // login
@@ -59,7 +62,7 @@ class AuthController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'Email or password is incorrect.'
-            ], 401);
+            ])->setStatusCode(401);
         }
 
         // Generate token
@@ -72,7 +75,7 @@ class AuthController extends Controller
                 'user' => $user,
                 'token' => $token
             ]
-        ]);
+        ])->setStatusCode(200);
     }
 
     // Logout
@@ -87,7 +90,7 @@ class AuthController extends Controller
         return response()->json([
             'status' => 'success',
             'message' => 'Logout success'
-        ]);
+        ])->setStatusCode(200);
     }
 
     // Restaurant register
@@ -146,7 +149,7 @@ class AuthController extends Controller
             'status' => 'success',
             'message' => 'Restaurant registered successfully',
             'data' => $user,
-        ]);
+        ])->setStatusCode(201);
     }
 
     // Driver register
@@ -200,7 +203,7 @@ class AuthController extends Controller
             'status' => 'success',
             'message' => 'Driver registered successfully',
             'data' => $user,
-        ]);
+        ])->setStatusCode(201);
     }
 
     // Update latlong user
@@ -224,7 +227,7 @@ class AuthController extends Controller
             'status' => 'success',
             'message' => 'Latlong updated successfully',
             'data' => $user,
-        ]);
+        ])->setStatusCode(200);
     }
 
 
@@ -237,12 +240,12 @@ class AuthController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'No restaurant found',
-            ], 404);
+            ])->setStatusCode(404);
         }
         return response()->json([
             'status' => 'success',
             'message' => 'Get all restaurants',
             'data' => $restaurant,
-        ]);
+        ])->setStatusCode(200);
     }
 }

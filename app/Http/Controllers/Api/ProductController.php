@@ -21,6 +21,7 @@ class ProductController extends Controller
             // Eager loading (with) to get user data from product
             $products = Product::with('user')
                 ->where('user_id', $user->id)
+                ->orderBy('created_at', 'desc')
                 ->get();
 
 
@@ -28,19 +29,19 @@ class ProductController extends Controller
                 return response()->json([
                     'status' => 'error',
                     'message' => 'No products found'
-                ], 404);
+                ])->setStatusCode(404);
             }
         } else {
             return response()->json([
                 'status' => 'error',
                 'message' => 'You are not authorized to access this resource. Must be a restaurant'
-            ], 403);
+            ])->setStatusCode(403);
         }
         return response()->json([
             'status' => 'success',
             'message' => 'All products found',
             'data' => $products
-        ]);
+        ])->setStatusCode(200);
     }
 
     // Get all product from a specific restaurant
@@ -53,7 +54,7 @@ class ProductController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'Restaurant not found'
-            ], 404);
+            ])->setStatusCode(404);
         }
 
         // Get all products from the restaurant
@@ -65,12 +66,13 @@ class ProductController extends Controller
                 'status' => 'error',
                 'message' => 'No products found',
                 'data' => $products
-            ], 404);
+            ])->setStatusCode(404);
         }
         return response()->json([
             'status' => 'success',
+            'message' => 'All products from restaurant id ' . $id . ' found',
             'data' => $products
-        ]);
+        ])->setStatusCode(200);
     }
 
     // Store/create product
@@ -123,8 +125,9 @@ class ProductController extends Controller
 
         return response()->json([
             'status' => 'success',
+            'message' => 'Product created successfully',
             'data' => $product
-        ]);
+        ])->setStatusCode(201);
     }
 
     // Show detail product from authenticated restaurant
@@ -144,14 +147,14 @@ class ProductController extends Controller
                 'status' => 'error',
                 'message' => 'Product not found',
 
-            ], 404);
+            ])->setStatusCode(404);
         }
 
         return response()->json([
             'status' => 'success',
             'message' => 'Product found',
             'data' => $product
-        ]);
+        ])->setStatusCode(200);
     }
     // Update product
     public function update(Request $request, int $id)
@@ -174,7 +177,7 @@ class ProductController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'Product not found'
-            ], 404);
+            ])->setStatusCode(404);
         }
 
         // Check if the form-data request has 'image' as key
@@ -223,7 +226,7 @@ class ProductController extends Controller
             'status' => 'success',
             'message' => 'Product updated successfully',
             'data' => $product
-        ]);
+        ])->setStatusCode(200);
     }
 
     // Delete product
@@ -237,7 +240,7 @@ class ProductController extends Controller
             return response()->json([
                 'status' => 'error',
                 'message' => 'Product not found'
-            ], 404);
+            ])->setStatusCode(404);
         }
         // Product found
         // Delete the product image
@@ -249,6 +252,6 @@ class ProductController extends Controller
         return response()->json([
             'status' => 'success',
             'message' => 'Product deleted successfully'
-        ]);
+        ])->setStatusCode(200);
     }
 }
