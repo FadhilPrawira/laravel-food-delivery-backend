@@ -38,14 +38,11 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/customer/register",
-									"protocol": "http",
+									"raw": "{{url}}/customer/register",
 									"host": [
-										"localhost"
+										"{{url}}"
 									],
-									"port": "8000",
 									"path": [
-										"api",
 										"customer",
 										"register"
 									]
@@ -300,14 +297,11 @@
 									"raw": "{\n    \"email\":\"bahri@fic18.com\",\n    \"password\":\"12345678\"\n}"
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/login",
-									"protocol": "http",
+									"raw": "{{url}}/login",
 									"host": [
-										"localhost"
+										"{{url}}"
 									],
-									"port": "8000",
 									"path": [
-										"api",
 										"login"
 									]
 								}
@@ -921,19 +915,16 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+										"value": "Bearer 40|jpunR3aZrIzaaZdPbXyRDjTe0e46sHeX46o9gcr9e2493850",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "http://localhost:8000/api/user",
-									"protocol": "http",
+									"raw": "{{url}}/user",
 									"host": [
-										"localhost"
+										"{{url}}"
 									],
-									"port": "8000",
 									"path": [
-										"api",
 										"user"
 									]
 								}
@@ -1154,6 +1145,160 @@
 									"body": "{\n    \"id\": 5,\n    \"name\": \"bahri fic18\",\n    \"email\": \"bahri@fic18.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2024-06-24T08:39:20.000000Z\",\n    \"updated_at\": \"2024-06-24T08:39:20.000000Z\",\n    \"phone\": \"085640998887\",\n    \"address\": null,\n    \"role\": \"customer\",\n    \"license_plate\": null,\n    \"restaurant_name\": null,\n    \"restaurant_address\": null,\n    \"photo\": null,\n    \"latlong\": null\n}"
 								}
 							]
+						},
+						{
+							"name": "update latlong",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 40|jpunR3aZrIzaaZdPbXyRDjTe0e46sHeX46o9gcr9e2493850",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"latlong\":\"-7.04945425840462, 110.43851010935616\",\n    \"address\":\"Jakarta\"\n}"
+								},
+								"url": {
+									"raw": "{{url}}/user/update-latlong",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"update-latlong"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 40|jpunR3aZrIzaaZdPbXyRDjTe0e46sHeX46o9gcr9e2493850",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"latlong\":\"-7.04945425840462, 110.43851010935616\",\n    \"address\":\"Jakarta\"\n}"
+										},
+										"url": {
+											"raw": "{{url}}/user/update-latlong",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"user",
+												"update-latlong"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "192.168.1.9:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.9"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 07 Jul 2024 16:52:09 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Latlong updated successfully\",\n    \"data\": {\n        \"id\": 16,\n        \"name\": \"bahri fic18\",\n        \"email\": \"bahri@fic18.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-07-06T18:07:22.000000Z\",\n        \"updated_at\": \"2024-07-07T16:52:09.000000Z\",\n        \"phone\": \"085640998887\",\n        \"address\": \"Jakarta\",\n        \"role\": \"customer\",\n        \"license_plate\": null,\n        \"restaurant_name\": null,\n        \"restaurant_address\": null,\n        \"photo\": null,\n        \"latlong\": \"-7.04945425840462, 110.43851010935616\",\n        \"fcm_id\": \"abcde\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "update FCM ID",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 38|cS7mhLdTfGywZ318xNYlwuKt0SYKmMcjdc9xUwUtdb3308bc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fcm_id\":\"abcde\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/update-fcm",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"update-fcm"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -1186,7 +1331,7 @@
 										},
 										{
 											"key": "email",
-											"value": "kopikenanganwismahartonojogja@fic18.com",
+											"value": "kopikenanganwismahartonojogja2@fic18.com",
 											"type": "text"
 										},
 										{
@@ -1222,14 +1367,11 @@
 									]
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/restaurant/register",
-									"protocol": "http",
+									"raw": "{{url}}/restaurant/register",
 									"host": [
-										"localhost"
+										"{{url}}"
 									],
-									"port": "8000",
 									"path": [
-										"api",
 										"restaurant",
 										"register"
 									]
@@ -1589,17 +1731,14 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"email\":\"kopikenanganwismahartonojogja@fic18.com\",\n    \"password\":\"12345678\"\n}"
+									"raw": "{\n    \"email\":\"kopikenanganwismahartonojogja2@fic18.com\",\n    \"password\":\"12345678\"\n}"
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/login",
-									"protocol": "http",
+									"raw": "{{url}}/login",
 									"host": [
-										"localhost"
+										"{{url}}"
 									],
-									"port": "8000",
 									"path": [
-										"api",
 										"login"
 									]
 								}
@@ -1831,19 +1970,16 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 1|2TbwEyX5g07rW50sQpITqEagcuTDXn5shkCogNb2d2ccc71c",
+										"value": "Bearer 1|3aGFStMxA17pQuuCbysAULdAURoOgcio9kS394AU069e78fe",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "http://localhost:8000/api/logout",
-									"protocol": "http",
+									"raw": "{{url}}/logout",
 									"host": [
-										"localhost"
+										"{{url}}"
 									],
-									"port": "8000",
 									"path": [
-										"api",
 										"logout"
 									]
 								}
@@ -2011,7 +2147,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 8|1paXqmJxKwtDOLoTuehzT17lLvPJunTX3V66Co0v9b26f3d0",
+										"value": "Bearer 15|RkLojQqXyvcNm7EUksdruZzUci7K99ih5XhwLPGc3623c34d",
 										"type": "text"
 									}
 								],
@@ -2020,14 +2156,11 @@
 									"raw": "{\n    \"email\":\"bambang@fic18.com\",\n    \"password\":\"12345678\"\n}"
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/user",
-									"protocol": "http",
+									"raw": "{{url}}/user",
 									"host": [
-										"localhost"
+										"{{url}}"
 									],
-									"port": "8000",
 									"path": [
-										"api",
 										"user"
 									]
 								}
@@ -2248,6 +2381,49 @@
 									"body": "{\n    \"id\": 2,\n    \"name\": \"Yusuf-Kopi Kenangan Mall Taman Anggrek\",\n    \"email\": \"kopikenanganmalltamananggrekjakarta@fic18.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2024-06-24T08:33:14.000000Z\",\n    \"updated_at\": \"2024-06-24T08:33:14.000000Z\",\n    \"phone\": \"08811649497\",\n    \"address\": null,\n    \"role\": \"restaurant\",\n    \"license_plate\": null,\n    \"restaurant_name\": \"Kopi Kenangan - Mall Taman Anggrek\",\n    \"restaurant_address\": \"Mall Taman Anggrek Jl. Letjen S. Parman No.28, Grogol petamburan, Jakarta Barat\",\n    \"photo\": \"1719217994.jpg\",\n    \"latlong\": \"-6.1785031257594065, 106.7922986291258\"\n}"
 								}
 							]
+						},
+						{
+							"name": "update FCM ID",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 38|cS7mhLdTfGywZ318xNYlwuKt0SYKmMcjdc9xUwUtdb3308bc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fcm_id\":\"abcde\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/update-fcm",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"update-fcm"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -3055,52 +3231,10 @@
 									"body": "{\n    \"id\": 3,\n    \"name\": \"Bambang\",\n    \"email\": \"bambangdriver@fic18.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2024-06-24T08:35:17.000000Z\",\n    \"updated_at\": \"2024-06-24T08:35:17.000000Z\",\n    \"phone\": \"08563432423\",\n    \"address\": null,\n    \"role\": \"driver\",\n    \"license_plate\": \"AB2342DD\",\n    \"restaurant_name\": null,\n    \"restaurant_address\": null,\n    \"photo\": \"1719218117.webp\",\n    \"latlong\": null\n}"
 								}
 							]
-						}
-					]
-				},
-				{
-					"name": "update latlong",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"latlong\":\"-7.04945425840462, 110.43851010935616\"\n    \n}"
 						},
-						"url": {
-							"raw": "http://localhost:8000/api/user/update-latlong",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"user",
-								"update-latlong"
-							]
-						}
-					},
-					"response": [
 						{
-							"name": "success",
-							"originalRequest": {
+							"name": "update FCM ID",
+							"request": {
 								"method": "PUT",
 								"header": [
 									{
@@ -3115,63 +3249,31 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+										"value": "Bearer 38|cS7mhLdTfGywZ318xNYlwuKt0SYKmMcjdc9xUwUtdb3308bc",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"latlong\":\"-7.04945425840462, 110.43851010935616\"\n    \n}"
+									"raw": "{\r\n    \"fcm_id\":\"abcde\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/user/update-latlong",
-									"protocol": "http",
+									"raw": "{{url}}/user/update-fcm",
 									"host": [
-										"localhost"
+										"{{url}}"
 									],
-									"port": "8000",
 									"path": [
-										"api",
 										"user",
-										"update-latlong"
+										"update-fcm"
 									]
 								}
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "localhost:8000"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/8.3.8"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 24 Jun 2024 08:54:34 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Latlong updated successfully\",\n    \"data\": {\n        \"id\": 4,\n        \"name\": \"Fadhil fic18\",\n        \"email\": \"fadhil@fic18.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-06-24T08:38:56.000000Z\",\n        \"updated_at\": \"2024-06-24T08:54:34.000000Z\",\n        \"phone\": \"0852112349877\",\n        \"address\": null,\n        \"role\": \"customer\",\n        \"license_plate\": null,\n        \"restaurant_name\": null,\n        \"restaurant_address\": null,\n        \"photo\": null,\n        \"latlong\": \"-7.04945425840462, 110.43851010935616\"\n    }\n}"
+							"response": []
 						}
 					]
 				}
@@ -3200,7 +3302,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 9|8RgYB3MB6kYUuHopcq8pAZ47902wp6oMqSX2FK7Pee9ed865",
+										"value": "Bearer 15|RkLojQqXyvcNm7EUksdruZzUci7K99ih5XhwLPGc3623c34d",
 										"type": "text"
 									}
 								],
@@ -3214,7 +3316,7 @@
 										},
 										{
 											"key": "description",
-											"value": "Terbuat dari jeruk mandarin",
+											"value": "Tugas 1 - Fadhil Prawira",
 											"type": "text"
 										},
 										{
@@ -3240,19 +3342,16 @@
 										{
 											"key": "image",
 											"type": "file",
-											"src": "postman-cloud:///1ef31f54-647e-44c0-b2ad-e4bcbf4a3532"
+											"src": "postman-cloud:///1ef31f2f-d000-4ba0-b1ef-8f9671d9f3e6"
 										}
 									]
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/products",
-									"protocol": "http",
+									"raw": "{{url}}/products",
 									"host": [
-										"localhost"
+										"{{url}}"
 									],
-									"port": "8000",
 									"path": [
-										"api",
 										"products"
 									]
 								}
@@ -4503,19 +4602,16 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 1|mgL32DCtLpWjLCDkSilOZb5CQI4iTIdlH5boDNeK6f48f9d3",
+										"value": "Bearer 37|vpx5gjyWhJj8UecnSyFhcHh4ZQDSEtZAFgnIFYya52ad3fc1",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "http://localhost:8000/api/products",
-									"protocol": "http",
+									"raw": "{{url}}/products",
 									"host": [
-										"localhost"
+										"{{url}}"
 									],
-									"port": "8000",
 									"path": [
-										"api",
 										"products"
 									]
 								}
@@ -4690,19 +4786,16 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+										"value": "Bearer 34|RcxrtkvNJI0jSw3tAKyq2bplCZSQD208S8grv15276af49d5",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "http://localhost:8000/api/restaurants",
-									"protocol": "http",
+									"raw": "{{url}}/restaurants",
 									"host": [
-										"localhost"
+										"{{url}}"
 									],
-									"port": "8000",
 									"path": [
-										"api",
 										"restaurants"
 									]
 								}
@@ -4867,23 +4960,20 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+										"value": "Bearer 43|LtDLk9QSQNdfqZJsZnAtwbwRTakYPpBZzVzhDcEa97996b59",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"restaurant_id\":1,\n    \"shipping_cost\":27000,\n    \"order_items\":[\n        {\n            \"product_id\": 1,\n            \"quantity\":2\n        },\n        {\n            \"product_id\": 5,\n            \"quantity\":2\n        }\n    ]\n}"
+									"raw": "{\n    \"restaurant_id\":2,\n    \"shipping_cost\":27000,\n    \"order_items\":[\n        {\n            \"product_id\": 1,\n            \"quantity\":2\n        },\n        {\n            \"product_id\": 5,\n            \"quantity\":2\n        }\n    ]\n}"
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/order",
-									"protocol": "http",
+									"raw": "{{url}}/order",
 									"host": [
-										"localhost"
+										"{{url}}"
 									],
-									"port": "8000",
 									"path": [
-										"api",
 										"order"
 									]
 								}
@@ -5290,6 +5380,306 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"status\": \"error\",\n    \"message\": \"No order found\",\n    \"data\": []\n}"
+								}
+							]
+						},
+						{
+							"name": "get all product from a specific restaurant",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 34|RcxrtkvNJI0jSw3tAKyq2bplCZSQD208S8grv15276af49d5",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/restaurant/2/products",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"restaurant",
+										"2",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get payment method",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 34|RcxrtkvNJI0jSw3tAKyq2bplCZSQD208S8grv15276af49d5",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/payment-methods",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"payment-methods"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 34|RcxrtkvNJI0jSw3tAKyq2bplCZSQD208S8grv15276af49d5",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/payment-methods",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"payment-methods"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "10.106.142.222:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.9"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 08 Jul 2024 03:46:15 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Payment methods retrieved successfully\",\n    \"payment_methods\": {\n        \"e_wallet\": {\n            \"ID_OVO\": \"OVO\",\n            \"ID_DANA\": \"Dana\",\n            \"ID_LINKAJA\": \"LinkAja\",\n            \"ID_SHOPEEPAY\": \"ShopeePay\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "purchase",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 34|RcxrtkvNJI0jSw3tAKyq2bplCZSQD208S8grv15276af49d5",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"payment_method\":\"e_wallet\",\r\n    \"payment_e_wallet\":\"DANA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/purchase/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"purchase",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update order by user",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\":\"processing\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/order/user/update-status/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"order",
+										"user",
+										"update-status",
+										"3"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "success",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"status\":\"processing\"\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/order/user/update-status/3",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"order",
+												"user",
+												"update-status",
+												"3"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.3.8"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 24 Jun 2024 14:27:38 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Order status has been updated\",\n    \"data\": {\n        \"id\": 3,\n        \"user_id\": 4,\n        \"restaurant_id\": 2,\n        \"driver_id\": 3,\n        \"total_price\": 38000,\n        \"shipping_cost\": 27000,\n        \"total_bill\": 65000,\n        \"payment_method\": null,\n        \"status\": \"processing\",\n        \"shipping_address\": null,\n        \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n        \"created_at\": \"2024-06-24T09:01:04.000000Z\",\n        \"updated_at\": \"2024-06-24T14:27:38.000000Z\"\n    }\n}"
 								}
 							]
 						}
@@ -6248,127 +6638,6 @@
 									"body": "{\n    \"status\": \"success\",\n    \"message\": \"Order status updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 4,\n        \"restaurant_id\": 1,\n        \"driver_id\": 3,\n        \"total_price\": 28000,\n        \"shipping_cost\": 27000,\n        \"total_bill\": 55000,\n        \"payment_method\": null,\n        \"status\": \"on_the_way\",\n        \"shipping_address\": null,\n        \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n        \"created_at\": \"2024-06-24T08:54:53.000000Z\",\n        \"updated_at\": \"2024-06-24T14:26:19.000000Z\"\n    }\n}"
 								}
 							]
-						}
-					]
-				},
-				{
-					"name": "update order by user",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"status\":\"processing\"\n}"
-						},
-						"url": {
-							"raw": "http://localhost:8000/api/order/user/update-status/3",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"order",
-								"user",
-								"update-status",
-								"3"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "success",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer 5|Dqi8K6nBqG4tv6MVWSXwntkksEMTi0cYNMOgLlUo1294fc6f",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"status\":\"processing\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost:8000/api/order/user/update-status/3",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8000",
-									"path": [
-										"api",
-										"order",
-										"user",
-										"update-status",
-										"3"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Host",
-									"value": "localhost:8000"
-								},
-								{
-									"key": "Connection",
-									"value": "close"
-								},
-								{
-									"key": "X-Powered-By",
-									"value": "PHP/8.3.8"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, private"
-								},
-								{
-									"key": "Date",
-									"value": "Mon, 24 Jun 2024 14:27:38 GMT"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"status\": \"success\",\n    \"message\": \"Order status has been updated\",\n    \"data\": {\n        \"id\": 3,\n        \"user_id\": 4,\n        \"restaurant_id\": 2,\n        \"driver_id\": 3,\n        \"total_price\": 38000,\n        \"shipping_cost\": 27000,\n        \"total_bill\": 65000,\n        \"payment_method\": null,\n        \"status\": \"processing\",\n        \"shipping_address\": null,\n        \"shipping_latlong\": \"-7.04945425840462, 110.43851010935616\",\n        \"created_at\": \"2024-06-24T09:01:04.000000Z\",\n        \"updated_at\": \"2024-06-24T14:27:38.000000Z\"\n    }\n}"
 						}
 					]
 				}
