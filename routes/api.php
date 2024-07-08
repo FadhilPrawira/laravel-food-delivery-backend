@@ -53,3 +53,15 @@ Route::put('/order/restaurant/update-status/{id}', [App\Http\Controllers\Api\Ord
 
 // Update order status by driver
 Route::put('/order/driver/update-status/{id}', [App\Http\Controllers\Api\OrderController::class, 'updateOrderStatusDriver'])->middleware('auth:sanctum');
+
+// Update FCM ID
+Route::put('/user/update-fcm', [App\Http\Controllers\Api\AuthController::class, 'updateFcmId'])->middleware('auth:sanctum');
+
+// Get payment methods
+Route::get('/payment-methods', [App\Http\Controllers\Api\OrderController::class, 'getPaymentMethods'])->middleware('auth:sanctum');
+
+// Purchase Order
+Route::post('/purchase/{orderId}', [App\Http\Controllers\Api\OrderController::class, 'purchaseOrder'])->middleware('auth:sanctum');
+
+// Xendit callback
+Route::post('/xendit-callback', [App\Http\Controllers\Api\OrderController::class, 'webhook']);

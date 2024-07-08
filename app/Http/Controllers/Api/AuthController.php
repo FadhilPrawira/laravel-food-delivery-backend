@@ -212,6 +212,7 @@ class AuthController extends Controller
         // Validate the request
         $request->validate([
             'latlong' => 'required|string',
+            'address' => 'required|string',
         ]);
 
         // Get the authenticated user
@@ -219,6 +220,8 @@ class AuthController extends Controller
 
         // Update the latlong
         $user->latlong = $request->latlong;
+        // Update the address
+        $user->address = $request->address;
 
         // Save the user
         $user->save();
@@ -246,6 +249,30 @@ class AuthController extends Controller
             'status' => 'success',
             'message' => 'Get all restaurants',
             'data' => $restaurant,
+        ])->setStatusCode(200);
+    }
+
+    // Update fcm_id
+    public function updateFcmId(Request $request)
+    {
+        // Validate the request
+        $request->validate([
+            'fcm_id' => 'required|string',
+        ]);
+
+        // Get the authenticated user
+        $user = $request->user();
+
+        // Update the fcm_id
+        $user->fcm_id = $request->fcm_id;
+
+        // Save the user
+        $user->save();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'FCM ID updated successfully',
+            'data' => $user,
         ])->setStatusCode(200);
     }
 }
